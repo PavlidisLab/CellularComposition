@@ -1,0 +1,51 @@
+This file contains list of code files and their description. Most code files have multiple sections, listed in the header of the file with their description. 
+
+>> QCpipelineBSC.m
+pre-processing of the brain snuc-RNAseq data, includes QC and generating of the .mat expression data files from this data. There are different groups of analyses and versions of processed data. 
+
+>> clusteringComparison.m
+General study of the network clusters (from GTEx-cortex data) and comparisons. Some major plots are here as well. 
+
+>> GTEx_cellTypeCorrection.m
+This file has multiple components. It is mostly focused on correcting the bulk GTEx-brain-cortex dataset. The correction is performed with different lists of markers, as well as random lists of genes.
+
+>> corrCluster_function_GTExExpGenes.m
+This is a funciton for clustering the given list of genes in GTEx_brain_cortex data. 
+
+>> markerIdentificationInSC.m
+Code for identification of marker genes in the snuc-RNAseq data. 
+
+>> moduleRepresentation.m
+Code for enrichment of functional terms in different networks. 
+
+>> buildingNetworks_GTEx_SC.m
+Code for building binary networks from GTEx datasets and snuc-RNAseq cell populations. 
+
+>> networkOverlapLR.m
+Getting the overlap between all networks, snuc-RNAseq and GTEx included. 
+
+>> gettingTheTSSDistForBiPrimer.m
+In this file I extract the highly represented links (repeated in multiple snuc-RNAseq networks). I also examine various reasons explanining their recurrence - such as bidirectional primers etc. 
+
+>> overlappingLinks_SC.m
+A file for studying and plotting the overlapping links among snuc-RNAseq networks. No major data files are generated in this file. 
+
+>> generateBulkFromSC.m
+Here I generate the simulated bulk datasets from snuc-RNAseq data. 
+
+>> specificResults.m
+Some final plots and text result files included in the manuscript are made in this file. 
+
+>> simCorrOfCTPVar.m
+This has the simulation code in the supplement and some experiments and plots regarding the simulation. 
+
+>> clusterMyGenes.m
+Code for clustering the networks. 
+
+>> bloodRun.m
+This has all the code for blood analysis - most parts are copied from brain analysis.
+
+
+
+
+

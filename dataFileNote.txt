@@ -1,0 +1,169 @@
+This file contains list of intermediate data files, their description and where they were built. 
+File01: filDataSet_exon_V4.mat
+Description: contains the data matrix for snuc-RNAseq expression dataset. 
+Built in: QCpipelineBSC.m
+
+File02: dataSet_meta_filtered_exon_V4.mat
+Description: Contains info for columns in in File01. 
+Built in: QCpipelineBSC.m
+
+File03: dataSet_meta_filtered_exon_V4_clusterLabels.mat
+Description: contains cell population labels for File01. 
+Built in: QCpipelineBSC.m
+
+File04: Brain_Cortex_expGenes.mat
+Description: GTEx brain-cortex dataset
+Built in: GTEx_cellTypeCorrection.m
+
+File: GOdata_GTExV6_nonComp.mat
+Description: This file contains a structure for GO annotations downloaded in May 2017. There are three matrices (gene symbols by functional terms) for the three branches of GO, matF [molecular function], matC [cellular component] and matP [biological process], as well as GO terms and IDs and gene symbols. 
+
+File: gtexClusters.mat
+Description: Contains the gene clustering results for GTEx_brain_cortex dataset. The hierarchical clustering was done with two different thresholds, gene labels for both thresholads are included in the file. All the downstream analyses was done with cs1547 labels.Built in: clusteringComparison.m, section 1. 
+
+File: GTEx_brain_cortex_markerSet.mat
+Description: sparse matrix called <markerSet>, gene by cell type, values indicate genes are markers for cell-types. Genes are as in File04, cellTypes are as identified in the code file. This is obtained from the Mancarci et al. list of brain-cortex markers in mouse, mapped to human homologues. 
+Built in: GTEx_cellTypeCorrection.m, section 1.2. 
+
+File: finalMarkerGenes_GTExBrainCortex_V1_cthr6.mat
+Description: This has the filtered marker gene list for 10 cell-types, from markers in Mancarci et al. The markers are filtered based on clustering. V1 is the version and cthr6 refers to the 0.6 value for the clustering function: corrCluster_function_GTExExpGenes.m
+Built in: GTEx_cellTypeCorrection.m, section 1.2. 
+
+File: scBasedMarkers.mat
+Description: marker genes identified based on snuc-RNAseq data. The structure contains list of cell-types and a matrix of genes by cell types. Genes are as in File01. 
+Built in: markerIdentificationInSC.m
+
+File: regressionResult_7PCA_AllenSCBasedMarker_redo.mat
+Description: Regression result file for markers from snuc-RNAseq data. There are multiple files of regression results. They differ in list of markers provided and the count of parameters that went into the regression model. These files include the adjusted Rsquared values for the genes, as well as the regression parameters.
+Built in: GTEx_cellTypeCorrection.m
+
+File : regressionResult_7PCA_5CellTypes_MarkersV1_cthr6.mat
+Description: Regression result file for markers from Mancarci et al. There are multiple files of regression results. They differ in list of markers provided and the count of parameters that went into the regression model. These files include the adjusted Rsquared values for the genes, as well as the regression parameters.
+Built in: GTEx_cellTypeCorrection.m
+
+File: regressionResult_7PCA_5CellTypes_100Mock_scBasedMarkers_redo.mat
+Description: This file contains regression results from 100 sets of mock marker genes. The genes are selected to have a similar expression distribution to that of the model marker genes (for this file, it is snuq-RNAseq markers). 
+Built in: GTEx_cellTypeCorrection.m
+
+File: regressionResult_7PCA_5CellTypes_100Mock_MarkersV1_ctrh6.mat
+Description: This file contains regression results from 100 sets of mock marker genes. The genes are selected to have a similar expression distribution to that of the model marker genes (for this file, it is markers from Mancarci et al.). 
+Built in: GTEx_cellTypeCorrection.m
+
+File: functionalEnrichment.mat
+Description: Enrichment of functional terms in each of the GTEx clusters
+Built in: clusteringComparison.m, section 5.
+
+File: moduleRep_GTExBrainCortex_CTC_logCorrected.mat
+Description: The moduleRep*.mat files have enrichment results for GO terms in each of the networks. This one has results from the residual network (CTC). 
+Built in: moduleRepresentation.m
+
+File: moduleRep_GTExBrainCortex.mat
+Description: The moduleRep*.mat files have enrichment results for GO terms in each of the networks. This one has results from the GTEx-brain dataset. 
+Built in: moduleRepresentation.m
+
+File: moduleRep_GTExBlood.mat
+Description: The moduleRep*.mat files have enrichment results for GO terms in each of the networks. This one has results from the GTEx-blood dataset. 
+Built in: moduleRepresentation.m
+
+File: moduleRep_GTExLiver.mat
+Description: The moduleRep*.mat files have enrichment results for GO terms in each of the networks. This one has results from the GTEx-liver dataset. 
+Built in: moduleRepresentation.m
+
+File: moduleRep_AffyTAN.mat
+Description: The moduleRep*.mat files have enrichment results for GO terms in each of the networks. This one has results from brain TAN network.
+Built in: moduleRepresentation.m
+
+File: moduleRep_AffyTSN.mat
+Description: The moduleRep*.mat files have enrichment results for GO terms in each of the networks. This one has results from brain TSN network. 
+Built in: moduleRepresentation.m
+
+File: moduleRep_AffyTANBlood.mat
+Description: The moduleRep*.mat files have enrichment results for GO terms in each of the networks. This one has results from blood TAN network. 
+Built in: moduleRepresentation.m
+
+File: moduleRep_AffyTANLiver.mat
+Description: The moduleRep*.mat files have enrichment results for GO terms in each of the networks. This one has results from liver TAN network. 
+Built in: moduleRepresentation.m
+
+File: funcRes_withAffyBloodLiver_FDR05.mat
+Description: Results from functional enrichment for networks: TAN, TSN, GTEx-cortex, GTExCTC, GTExBlood, GTExLiver, tanLiver, tanBlood
+Built in: moduleRepresentation.m
+
+File: GTExitselfClusterRep.mat
+Description: gene count, link count and density of the GTEx-cortex clusters. 
+Built in: clusteringComparison.m
+
+File: GTExCTCClusterRep.mat
+Description: Results for the reproducibility of GTEx-cortex clusters in GTEx-CTC network. It includes cluster IDs, the original gene count in the GTEx-cortex cluster, the link count in the GTEx-CTC cluster and the expressed genes, as well as the density of the clusters. 
+Built in: clusteringComparison.m
+
+File: GTExBloodClusterRep_V2.mat
+Description: Results for the reproducibility of GTEx-cortex clusters in GTEx-blood network. It includes cluster IDs, the original gene count in the GTEx-cortex cluster, the link count in the GTEx-blood cluster and the expressed genes, as well as the density of the clusters. 
+Built in: clusteringComparison.m
+
+File: GTExLiverClusterRep_V2.mat
+Description: Results for the reproducibility of GTEx-cortex clusters in GTEx-liver network. It includes cluster IDs, the original gene count in the GTEx-cortex cluster, the link count in the GTEx-liver cluster and the expressed genes, as well as the density of the clusters. 
+Built in: clusteringComparison.m
+
+File: TSNClusterRep_V2.mat
+Description: Results for the reproducibility of GTEx-cortex clusters in tsn network. It includes cluster IDs, the original gene count in the GTEx-cortex cluster, the link count in the tsn cluster and the expressed genes, as well as the density of the clusters. 
+Built in: clusteringComparison.m
+
+File: TANclusterRep_V2.mat
+Description: Results for the reproducibility of GTEx-cortex clusters in tan network. It includes cluster IDs, the original gene count in the GTEx-cortex cluster, the link count in the tan cluster and the expressed genes, as well as the density of the clusters. 
+Built in: clusteringComparison.m
+
+File: affyBloodClusterRep.mat
+Description: Results for the reproducibility of GTEx-cortex clusters in tanBlood network. It includes cluster IDs, the original gene count in the GTEx-cortex cluster, the link count in the tanBlood cluster and the expressed genes, as well as the density of the clusters. 
+Built in: clusteringComparison.m
+
+File: affyLiverClusterRep_V2.mat
+Description: Results for the reproducibility of GTEx-cortex clusters in tanLiver network. It includes cluster IDs, the original gene count in the GTEx-cortex cluster, the link count in the tanLiver cluster and the expressed genes, as well as the density of the clusters. 
+Built in: clusteringComparison.m
+
+File: scClusterRep.mat
+Description: Results for the reproducibility of GTEx-cortex clusters in the 69 snuc-RNAseq networks. Name of populations are included. 
+Built in: clusteringComparison.m
+
+File: binNets_Exon_V4_allFive_net[...].mat, from 1 to 69
+Description: contains the binary network built from snuc-RANseq cell populations. File contains name of the cell population, a vector for included genes (from the 16789 genes in the snuc-RNAseq whole dataset) and five binary networks from different thresholds. 
+Built in: BuildingNetworks_GTEx_SC.m
+
+File: fiveTissues_rpmFromGeneLevel_binNets.mat
+Description: binary networks from five GTEx datasets: brain-cortex, blood, liver, lung, skeletal muscle. 
+Built in: buildingNetworks_GTEx_SC.m
+
+File: correctedBinNets_logCorrected_jusResiduals_scBasedMarkers_redo.mat
+Description: ctc (GTEx-cortex-residicual) network.
+Built in: GTEx_cellTypeCorrection.m
+
+File: sumNets.mat
+Description: sum of the networks built from snuc-RNAseq data for two groups of inhibitory and excitatory neurons. 
+Built in: networksOverlapLR.m
+
+File: allNetworkOverlaps_noVarAdded_redo.mat
+Description: contains the information for overlap of the total of 86 networks, including GTEx, TAN and snuc-RNAseq networks. See the 'Built in' file for the details and order of networks. 
+Built in: networkOverlapLR.m
+
+File: highRepLinks.mat
+Description: This file contains the information for the robust network built from the sum of snuc-RNAseq netowrks. See the file gettingTheTSSDistForBiPrimer.m for details of the fields in the structure.
+Built in: gettingTheTSSDistForBiPrimer.m
+
+>>>>>>>>> Files provided from previous projects or other sources
+
+File: humanAndMouse.txt
+Description: the file contains mapping of the homologue genes for human and mouse.
+
+File: [tissue]_binaryNet_FDR5e-5_0.8Expr_Ind0.10.mat
+Description: The TAN networks from Farahbod&Pavlidis 2018 [Bioinformatics]
+
+File: finalTable_CG13_FC3log_FDR0012.mat 
+Description: The TSN networks from Farahbod&Pavlidis 2018 [Bioinformatics]
+
+File: GPL570GemmaMapNEW.mat
+Description: This is a datastructure for mapping of the gene symbols and probe IDs for Affymetrix platform GPL570, downloaded from Gemma database 
+
+File: GTExAllDataSetFromGeneLevel_v6p_newWithBlood_RPM.mat
+Description: This is a MATLAB datastructure for expression data from all the tissues in GTEx dataset. 
+
+
